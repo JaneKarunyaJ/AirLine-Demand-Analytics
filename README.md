@@ -1,82 +1,158 @@
-# ✈️📊 Airline Demand Analytics Dashboard
+# ✈️ Airline Demand Analytics Dashboard
 
-A Python Flask web application that visualizes airline booking trends using real-time flight data and simulated insights.  
-Designed for businesses in the **travel and hospitality** industry to make smarter decisions based on booking demand patterns.
-
----
-
-## 🔍 Overview
-
-This dashboard fetches flight data via the **OpenSky Network API**, simulates pricing and demand, and presents insights like:
-- Most popular flight routes
-- Pricing trends over time
-- High-demand routes and periods
-
-Built with:
-- 🐍 Python (Flask, Pandas)
-- 📊 Plotly for interactive charts
-- 🌐 HTML & Jinja for web rendering
+A responsive Flask web app that fetches and visualizes airline booking trends using real-time or simulated flight data.  
+Built to help travel businesses make smarter, data-driven decisions.
 
 ---
 
-## 📦 Dataset / Data Source
+## ✨ Features
 
-The application **does not require a local dataset**. It pulls real-time public flight data using:
-
-| Source | Purpose |
-|--------|---------|
-| [OpenSky Network API](https://opensky-network.org/) | Real-time aircraft location and route data |
-
-Simulated attributes:
-- **Price** is randomly generated based on route hash
-- **Demand** is a simulated score based on callsign hash
-
----
-
-## 🧠 Features
-
-| Feature | Description |
-|--------|-------------|
-| ✈ Real-Time API Integration | Live aircraft data from OpenSky API |
-| 📈 Route Popularity Analysis | Top 5 routes shown using bar charts |
-| 💹 Price Trend Analysis | Interactive line chart of average price per day |
-| 🔎 Filter by Route | Dropdown selector for route-based insights |
-| 📱 Responsive UI | Works on all screen sizes (mobile/tablet/desktop) |
+- 🔄 **Real-Time Flight Data** via OpenSky API
+- 📊 **Interactive Charts** using Plotly:
+  - Route Popularity
+  - Price Trends
+- 📈 **Smart Insights**:
+  - Peak Demand Periods
+  - Top Performing Routes
+  - Dynamic Filtering by Route
+- 📱 **Responsive Design** – works on desktop, tablet, and mobile
 
 ---
 
-## ⚙️ Installation & Usage
+## 🚀 Quick Start
 
 ### ✅ Prerequisites
-- Python 3.8+
-- pip
+- Python 3.8 or higher
+- `pip` package manager
 
-### 🚀 Setup Instructions
+---
+
+## ⚙️ Installation
+
+### 1️⃣ Clone the repository
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/yourusername/airline-demand-analytics.git
-cd airline-demand-analytics
+git clone https://github.com/JaneKarunyaJ/AirLine-Demand-Analytics.git
+cd AirLine-Demand-Analytics
+```
 
-# 2. Create a virtual environment
+---
+
+### 2️⃣ Create a virtual environment
+
+```bash
 python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-# 3. Install dependencies
+---
+
+### 3️⃣ Activate the environment
+
+**macOS/Linux:**
+```bash
+source venv/bin/activate
+```
+
+**Windows:**
+```bash
+venv\Scripts\activate
+```
+
+---
+
+### 4️⃣ Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-# 4. Run the app
+---
+
+### ▶️ Run the application
+
+```bash
 python main.py
-Then open your browser at: http://127.0.0.1:5000
+```
 
-🧾 Project Structure
-php
-Copy
-Edit
-airline-demand-analytics/
-├── main.py               # Core Flask backend with chart logic
-├── requirements.txt      # Python dependencies
+Then open your browser and visit:  
+👉 [http://localhost:5000](http://localhost:5000)
+
+---
+
+## 📡 Data Sources
+
+### 🔌 Live API (Optional)
+
+Uses OpenSky Network API for real-time flight data ✈️  
+You can also integrate premium APIs like AviationStack.
+
+Example usage:
+
+```python
+API_KEY = "your_api_key_here"
+```
+
+---
+
+### 🧪 Simulated Sample Data
+
+Preloaded with random demand and price simulation for testing.  
+Example flights include:
+
+- ✈️ Singapore Airlines SQ221 (SYD-SIN)
+- 🦘 Qantas QF81 (SYD-SIN)
+- 🐯 Scoot TR7 (SYD-SIN)
+
+---
+
+## 🧾 Project Structure
+
+```bash
+AirLine-Demand-Analytics/
+├── main.py               # 🚀 Main Flask application logic
 ├── templates/
-│   └── dashboard.html    # Jinja2-based web UI template
-├── static/               # (Optional) CSS or JS files
-└── README.md             # Project documentation
+│   └── dashboard.html    # 🎨 Jinja2 HTML template
+├── static/               # 🎯 Optional CSS/JS assets
+├── requirements.txt      # 📦 Python dependencies
+└── README.md             # 📘 This file
+```
+
+---
+
+## 🛠️ Sample Custom Data Structure
+
+You can extend the app with structured flight data like below:
+
+```python
+{
+  "datetime": "2025-07-07 09:00",
+  "airline": "Your Airline",
+  "flight_number": "YA123",
+  "route": "MEL-SYD",
+  "price": 245.00,
+  "status": "On Time"
+}
+```
+
+---
+
+## 🚀 Future Enhancements
+
+- 🧠 ChatGPT integration for natural-language trend summaries
+- 📁 CSV export of route and pricing insights
+- 🗃 Persistent storage with SQLite or PostgreSQL
+- 📆 Date-based and seasonal demand filtering
+- 🔐 User login for data upload and access
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 👩‍💻 Developed by
+
+**Jane Karunya J**  
+✨ [GitHub](https://github.com/JaneKarunyaJ)
